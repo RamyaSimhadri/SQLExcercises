@@ -15,7 +15,7 @@ p_start_date varchar(20), /*PROJECT START DATE */
 p_end_date varchar(20), /* PROJECT END DATE */
 emp_id int not null,
 primary key (project_id),
-foreign key (emp_id) references employee(emp_id)
+foreign key (emp_id) references employee1(emp_id)
 );
 
 
@@ -76,4 +76,11 @@ select * from parts where s_id='67';/* getting part details for the given suppli
 
 
 
+select *from employee1
+inner join project
+on project.emp_id=employee1.emp_id;/*getting all the details  of the employee and the project he is working on */
+
+select * from supply
+inner join parts
+on supply.s_id= parts.s_id;/*getting the details like who supplied which part like part_id,part_name */
 
